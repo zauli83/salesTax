@@ -1,11 +1,9 @@
-package test.application.tax;
+package test.application.tax.item;
 
 import test.application.cart.Item;
-import test.application.cart.TaxedItem;
 
 public class PercentageTaxType implements TaxType {
     private Double rate;
-    private TaxedItem taxedItem;
 
     public Double getRate() {
         return rate;
@@ -13,12 +11,11 @@ public class PercentageTaxType implements TaxType {
 
     public PercentageTaxType(Double rate) {
         this.rate = rate;
-        this.taxedItem = taxedItem;
     }
 
     @Override
     public Double calculateTax(Item item) {
-        Double price = taxedItem.getItem().getPrice();
+        Double price = item.getPrice() * rate;
         return roundUpTo5Cent(price);
     }
 

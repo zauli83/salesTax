@@ -1,4 +1,4 @@
-package test.application.tax;
+package test.application.tax.item;
 
 import test.application.cart.Item;
 

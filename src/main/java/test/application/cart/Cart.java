@@ -1,6 +1,6 @@
 package test.application.cart;
 
-import test.application.tax.CartTaxStrategy;
+import test.application.tax.cart.CartTaxStrategy;
 import test.application.printer.CartReceiptPrinter;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class Cart {
     }
 
     public void applyTaxes(CartTaxStrategy cartTaxStrategy) {
-        cartTaxStrategy.apply();
+        cartTaxStrategy.apply(this);
     }
 
     public void printReceipt(CartReceiptPrinter cartReceiptPrinter) {

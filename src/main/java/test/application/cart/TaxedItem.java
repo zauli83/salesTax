@@ -1,7 +1,7 @@
 package test.application.cart;
 
-import test.application.tax.NoTaxType;
-import test.application.tax.TaxType;
+import test.application.tax.item.NoTaxType;
+import test.application.tax.item.TaxType;
 
 public class TaxedItem {
     private Item item;
