@@ -14,5 +14,16 @@ public class PercentageTaxTypeTest {
         Assert.assertTrue(1d == tax);
     }
 
+    @Test
+    public void bestCaseApproximation() {
+        Item item = new Item();
+        item.setPrice(10d);
+        double rateStart = 0.100;
+        for (int i = 1; i < 5; i++) {
+            Double tax = new PercentageTaxType(rateStart + i * 0.001).calculateTax(item);
+            Assert.assertTrue(1.05 == tax);
+        }
+    }
+
 
 }

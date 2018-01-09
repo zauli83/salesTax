@@ -20,6 +20,6 @@ public class PercentageTaxType implements TaxType {
     }
 
     private double roundUpTo5Cent(Double price) {
-        return Math.round(price * 20.0) / 20.0;
+        return Math.ceil(price * 20) / 20.0;
     }
 }
