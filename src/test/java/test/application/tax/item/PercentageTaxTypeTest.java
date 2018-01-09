@@ -9,7 +9,7 @@ public class PercentageTaxTypeTest {
     public void bestCaseNoApproximation() {
         Item item = new Item();
         item.setPrice(10d);
-        Double tax = new PercentageTaxType(0.1).calculateTax(item);
+        Double tax = new PercentageTaxType(10d).calculateTax(item);
 
         Assert.assertTrue(1d == tax);
     }
@@ -17,13 +17,11 @@ public class PercentageTaxTypeTest {
     @Test
     public void bestCaseApproximation() {
         Item item = new Item();
-        item.setPrice(10d);
-        double rateStart = 0.100;
+        item.setPrice(1d);
         for (int i = 1; i < 5; i++) {
-            Double tax = new PercentageTaxType(rateStart + i * 0.001).calculateTax(item);
-            Assert.assertTrue(1.05 == tax);
+            Double tax = new PercentageTaxType((double) i * 0.01).calculateTax(item);
+            Assert.assertTrue(0.05 == tax);
         }
     }
-
 
 }

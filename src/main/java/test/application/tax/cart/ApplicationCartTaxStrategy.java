@@ -18,17 +18,17 @@ public class ApplicationCartTaxStrategy implements CartTaxStrategy {
             TaxedItem purchaseItem = cartItem.getPurchaseItem();
             Item item = purchaseItem.getItem();
             if (!isTaxesFree(item)) {
-                compositeTaxType.addTax(new PercentageTaxType(0.1));
+                compositeTaxType.addTax(new PercentageTaxType(10d));
             }
 
             if (item.isImported()) {
-                compositeTaxType.addTax(new PercentageTaxType(0.05));
+                compositeTaxType.addTax(new PercentageTaxType(5d));
             }
             purchaseItem.setTaxType(compositeTaxType);
         }
     }
 
-    public boolean isTaxesFree(Item item) {
+    private boolean isTaxesFree(Item item) {
         return item.getName().toLowerCase().contains("book")
                 || item.getName().toLowerCase().contains("chocolate") ||
                 item.getName().toLowerCase().contains("headache pills");

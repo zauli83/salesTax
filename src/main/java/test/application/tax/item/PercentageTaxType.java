@@ -15,7 +15,7 @@ public class PercentageTaxType implements TaxType {
 
     @Override
     public Double calculateTax(Item item) {
-        Double price = item.getPrice() * rate;
+        Double price = item.getPrice() * rate / 100d;
         return roundUpTo5Cent(price);
     }
 
