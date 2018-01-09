@@ -1,10 +1,11 @@
 package test.application.cart;
 
-import test.application.tax.TaxItem;
+import test.application.tax.NoTaxType;
+import test.application.tax.TaxType;
 
 public class TaxedItem {
     private Item item;
-    private TaxItem taxItem;
+    private TaxType taxType = new NoTaxType();
 
     public TaxedItem(Item item) {
         this.item = item;
@@ -18,11 +19,11 @@ public class TaxedItem {
         this.item = item;
     }
 
-    public TaxItem getTaxItem() {
-        return taxItem;
+    public TaxType getTaxType() {
+        return taxType;
     }
 
-    public void setTaxItem(TaxItem taxItem) {
-        this.taxItem = taxItem;
+    public void setTaxType(TaxType taxType) {
+        this.taxType = taxType;
     }
 }

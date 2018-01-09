@@ -7,10 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
+
     private List<CartItem> cartItems = new ArrayList<>();
+    private Double totalTaxes = 0d;
 
     public List<CartItem> getCartItems() {
         return cartItems;
+    }
+
+    public Double getTotalTaxes() {
+        return totalTaxes;
+    }
+
+    public void setTotalTaxes(Double totalTaxes) {
+        this.totalTaxes = totalTaxes;
     }
 
     public void applyTaxes(CartTaxStrategy cartTaxStrategy) {
