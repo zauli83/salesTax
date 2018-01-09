@@ -1,4 +1,4 @@
-package test.application;
+package test.application.utils;
 
 public class StringUtils {
     public static String[] splitLines(String input) {

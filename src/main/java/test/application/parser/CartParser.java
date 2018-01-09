@@ -1,6 +1,6 @@
 package test.application.parser;
 
-import test.application.StringUtils;
+import test.application.utils.StringUtils;
 import test.application.cart.Cart;
 import test.application.cart.CartItem;
 import test.application.cart.Item;
