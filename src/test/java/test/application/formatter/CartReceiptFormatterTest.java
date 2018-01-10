@@ -13,7 +13,7 @@ public class CartReceiptFormatterTest {
     public void zeroItemsTest() {
         Cart cart = new Cart();
         String formatted = new CartReceiptFormatter().format(cart);
-        Assert.assertEquals("Sales Taxes: 0.0" + StringUtils.LINE_SEPARATOR + "Total: 0.0", formatted);
+        Assert.assertEquals("Sales Taxes: 0.00" + StringUtils.LINE_SEPARATOR + "Total: 0.00", formatted);
     }
 
     @Test
@@ -21,7 +21,7 @@ public class CartReceiptFormatterTest {
         Cart cart = new Cart();
         cart.addItem(new CartItem(1d, new TaxedItem(new Item("book", false, 2d))));
         String formatted = new CartReceiptFormatter().format(cart);
-        Assert.assertEquals("1 book: 2.0" + StringUtils.LINE_SEPARATOR + "Sales Taxes: 0.0" + StringUtils.LINE_SEPARATOR + "Total: 0.0", formatted);
+        Assert.assertEquals("1 book: 2.00" + StringUtils.LINE_SEPARATOR + "Sales Taxes: 0.00" + StringUtils.LINE_SEPARATOR + "Total: 0.00", formatted);
     }
 
 
@@ -31,6 +31,6 @@ public class CartReceiptFormatterTest {
         cart.addItem(new CartItem(1.5d, new TaxedItem(new Item("book", false, 2d))));
         cart.addItem(new CartItem(1.5d, new TaxedItem(new Item("test", false, 4d))));
         String formatted = new CartReceiptFormatter().format(cart);
-        Assert.assertEquals("1.5 book: 3.0" + StringUtils.LINE_SEPARATOR+ "1.5 test: 6.0" + StringUtils.LINE_SEPARATOR + "Sales Taxes: 0.0" + StringUtils.LINE_SEPARATOR + "Total: 0.0", formatted);
+        Assert.assertEquals("1.50 book: 3.00" + StringUtils.LINE_SEPARATOR+ "1.50 test: 6.00" + StringUtils.LINE_SEPARATOR + "Sales Taxes: 0.00" + StringUtils.LINE_SEPARATOR + "Total: 0.00", formatted);
     }
 }
