@@ -22,7 +22,7 @@ public class ApplicationCartTaxStrategyTest {
 
         CartItem cartItem1 = cart.getCartItems().get(0);
         TaxedItem purchaseItem = cartItem1.getPurchaseItem();
-        Double tax = purchaseItem.getTaxType().calculateTax(purchaseItem.getItem());
+        Double tax = purchaseItem.calculateTaxes();
 
         Assert.assertTrue(15d == tax);
     }
@@ -38,7 +38,7 @@ public class ApplicationCartTaxStrategyTest {
 
         CartItem cartItem1 = cart.getCartItems().get(0);
         TaxedItem purchaseItem = cartItem1.getPurchaseItem();
-        Double tax = purchaseItem.getTaxType().calculateTax(purchaseItem.getItem());
+        Double tax = purchaseItem.calculateTaxes();
 
         Assert.assertTrue(10d == tax);
     }

@@ -5,6 +5,14 @@ public class Item {
     private boolean imported;
     private Double price;
 
+    public Item(){}
+
+    public Item(String name, boolean imported, Double price) {
+        this.name = name;
+        this.imported = imported;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }

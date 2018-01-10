@@ -7,6 +7,7 @@ import test.application.cart.CartItem;
 import test.application.cart.Item;
 
 public class CartParserTest {
+
     @Test
     public void nullInput() throws CartParserException {
         Cart cart = new CartParser().parse(null);
@@ -57,7 +58,6 @@ public class CartParserTest {
             Assert.assertEquals("Cannot parse input:  e dh  dhj dh d at 3", e.getMessage());
         }
     }
-
 
     @Test
     public void bestCaseWithImportedKeyWordAtEnd() throws CartParserException {
@@ -124,8 +124,6 @@ public class CartParserTest {
         Assert.assertEquals("food", item2.getName());
         Assert.assertTrue(5 == item2.getPrice());
         Assert.assertFalse(item2.isImported());
-
     }
-
 
 }

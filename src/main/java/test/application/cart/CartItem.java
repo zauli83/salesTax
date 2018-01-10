@@ -4,6 +4,14 @@ public class CartItem {
     private Double quantity;
     private TaxedItem purchaseItem;
 
+    public CartItem() {
+    }
+
+    public CartItem(Double quantity, TaxedItem purchaseItem) {
+        this.quantity = quantity;
+        this.purchaseItem = purchaseItem;
+    }
+
     public Double getQuantity() {
         return quantity;
     }
@@ -18,5 +26,13 @@ public class CartItem {
 
     public void setPurchaseItem(TaxedItem purchaseItem) {
         this.purchaseItem = purchaseItem;
+    }
+
+    public Double calculateTotalPrice() {
+        return purchaseItem.getTotal() * quantity;
+    }
+
+    public Double calculateTotalTax() {
+        return purchaseItem.calculateTaxes() * quantity;
     }
 }

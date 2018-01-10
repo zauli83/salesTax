@@ -11,6 +11,15 @@ public class TaxedItem {
         this.item = item;
     }
 
+
+    public Double calculateTaxes() {
+        return taxType.calculateTax(item);
+    }
+
+    public Double getTotal() {
+        return item.getPrice() + calculateTaxes();
+    }
+
     public Item getItem() {
         return item;
     }
