@@ -1,0 +1,1 @@
+![](https://travis-ci.org/zauli83/salesTax.svg?branch=master)
