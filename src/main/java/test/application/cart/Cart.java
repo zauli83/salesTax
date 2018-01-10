@@ -1,7 +1,6 @@
 package test.application.cart;
 
 import test.application.tax.cart.CartTaxStrategy;
-import test.application.printer.CartReceiptPrinter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +34,6 @@ public class Cart {
 
     public Double getTotal() {
         return total;
-    }
-
-    public void printReceipt(CartReceiptPrinter cartReceiptPrinter) {
-        cartReceiptPrinter.print();
     }
 
     private void calculateTaxes() {
