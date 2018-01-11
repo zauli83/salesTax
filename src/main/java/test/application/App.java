@@ -9,9 +9,9 @@ import test.application.tax.cart.ApplicationCartTaxStrategy;
 public class App {
     public String run(String input) throws CartParserException {
         CartParser cartParser = new CartParser();
-        Cart parse = cartParser.parse(input);
-        parse.setTaxesStrategy(new ApplicationCartTaxStrategy());
-        parse.compute();
-        return new CartReceiptFormatter().format(parse);
+        Cart cart = cartParser.parse(input);
+        cart.setTaxesStrategy(new ApplicationCartTaxStrategy());
+        cart.compute();
+        return new CartReceiptFormatter().format(cart);
     }
 }
